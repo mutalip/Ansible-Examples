@@ -1,17 +1,17 @@
 Ansible Ad Hoc commands:
 ========================
 
-root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show run" -u david -k | grep 'username' > usernames.txt
+root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show run" -u admin -k | grep 'username' > usernames.txt
 
 root@NetworkAutomation-1:~# cat usernames.txt
 
-root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show run" -u david -k > shrun.txt
+root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show run" -u admin -k > shrun.txt
 
 root@NetworkAutomation-1:~# cat shrun.txt
 
 root@NetworkAutomation-1:~# more shrun.txt
 
-root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show ver" -u david -k > shver.txt
+root@NetworkAutomation-1:~# ansible group -i ./s3hosts -m raw -a "show ver" -u admin -k > shver.txt
 
 root@NetworkAutomation-1:~# more shver.txt | grep Version
 
