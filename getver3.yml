@@ -1,0 +1,15 @@
+- name: Collect version
+  ios_command:
+    host: ""
+    username: ""
+    password: ""
+    commands: "show version"
+  register: version
+- name: Pre5
+  set_fact:
+    pre: 5
+  when: '"UBR10K5" in version["stdout"][0]'
+- name: Pre4
+  set_fact:
+    pre: 4
+  when: '"UBR10K4" in version["stdout"][0]'
