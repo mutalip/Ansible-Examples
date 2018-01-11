@@ -13,20 +13,3 @@
   set_fact:
     pre: 4
   when: '"UBR10K4" in version["stdout"][0]'
-
-
-
-
-
-SSH password: 
-
-PLAY [Backup show version and other user level commands] ***********************
-
-TASK [run multiple commands on remote nodes] ***********************************
-fatal: [S5]: FAILED! => {"changed": false, "failed": true, "msg": "missing required arguments: host"}
-fatal: [S6]: FAILED! => {"changed": false, "failed": true, "msg": "missing required arguments: host"}
-	to retry, use: --limit @/home/mutalip/test2.retry
-
-PLAY RECAP *********************************************************************
-S5                         : ok=0    changed=0    unreachable=0    failed=1   
-S6                         : ok=0    changed=0    unreachable=0    failed=1   
