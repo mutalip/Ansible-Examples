@@ -1,0 +1,21 @@
+---
+- name: Backup show run (enable mode commands)
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: run enable level commands
+      ios_command:
+        authorize: yes
+        commands:
+          - show run
+
+      register: print_output
+
+    -  debug: var=print_output.stdout_lines
+
+    - name: save output to a file
+      copy: content="{{ print_output.stdout[0] }}" dest="./output/{{ inventory_hostname }}.txt"
+
+
