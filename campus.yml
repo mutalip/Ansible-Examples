@@ -7,7 +7,7 @@
 
   vars:
     cli:
-      username: david
+      username: admin
       password: cisco
       transport: cli
 
