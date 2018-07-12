@@ -1,0 +1,31 @@
+  GNU nano 2.7.4                                                                  File: getshrun.yml                                                                             
+
+---
+- name: Backup show version and other user level commands
+  hosts: all
+  gather_facts: false
+  connection: local
+
+
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: admin
+      password: B.h.d.c.switcH
+      transport: cli
+
+  tasks:
+    - name: run multiple commands on remote nodes
+      ios_command:
+        provider: "{{ cli }}"
+        commands:
+          - show run
+
+      register: print_output
+
+    -  debug: var=print_output.stdout_lines
+
+    - name: save output to a file
+      copy: content="{{ print_output.stdout[0] }}" dest="./output/{{ inventory_hostname }}.txt"
+
+
