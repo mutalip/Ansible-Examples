@@ -1,7 +1,7 @@
 ---
 
 - name: Cisco Wired Campus Design - Access
-  hosts: gns3-access
+  hosts: access
   gather_facts: false
   connection: local
 
@@ -36,7 +36,7 @@
           - service timestamps debug datetime msec localtime
           - service timestamps log datetime msec localtime
 
-          - "vlan 1,10,20,30,40,50"
+          - "vlan 1,10,20,30,40,50,80"
           - ip default-gateway 192.168.122.1
           - "ip dhcp snooping vlan 100,101"
 
@@ -132,7 +132,7 @@
           - service timestamps debug datetime msec localtime
           - service timestamps log datetime msec localtime
 
-          - "vlan 1,10,20,30,40,50"
+          - "vlan 1,10,20,30,40,50,80"
           - ip default-gateway 192.168.122.1
           - "ip dhcp snooping vlan 100,101"
 
